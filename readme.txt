@@ -6,6 +6,5 @@ Pode ser que algumas ações não funcione corretamente devido a várialvel de a
 
 O projeto foi desenvolvido utilizando a linguagem de programação Java e possui os padrões CRUD, MVC e DAO.
 
-Para hospedar o html e o SQL na minha máquina eu utilizei o XAMMP.
 
 JAVA | JAVASCRIPT | MySQL | HTML | CSS 
