@@ -17,5 +17,5 @@ Contém CRUD, MVC e DAO, além de possuir CSS e JavaScript.
 
 <br>
 
-### Print do Proj_Cliente:
+### Print:
   <img src="https://user-images.githubusercontent.com/120659522/269720173-a5118c67-3fb9-4747-838a-3e708b95fa64.png">
