@@ -1,0 +1,153 @@
+ <html>
+    <head>
+        <title>Cadastro de Cliente</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Inclusão do arquivo de estilo externo -->
+        <link rel="stylesheet" href="./Style/Style.css">
+
+        <!-- Definição do ícone da página -->
+        <link rel="icon" href="./IMAGENS/pessoa-ico.png" type="image/png">
+
+        <!-- Script JavaScript para redirecionar ao consultar todos -->
+        <script type="text/javascript">
+            function carregarconsultartodos() {
+                window.location = "/Proj_Cliente/controle_cliente?op=CONSULTAR TODOS";
+            }
+        </script>
+    </head>
+
+    <body>
+        <!-- Formulário de cadastro de cliente -->
+        <form name="f1" action="controle_cliente" method="GET">
+            <h1>CADASTRO DE CLIENTE</h1>
+
+            <!-- Lista de perguntas -->
+            <ul class="question-list">
+                <li>
+                    <label>CPF:</label>
+                    <input type="text" name="txtcpf" id="cpfInput" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" title="Digite um CPF válido" required>
+                </li>
+
+                <script>
+                    // Função para aplicar a máscara no campo de RG
+                    function maskCPF(input) {
+                        let value = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+
+                        if (value.length > 2) {
+                            value = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2}).*/, '$1.$2.$3-$4'); // Aplica a máscara XXX.XXX.XXX-XX
+                        }
+
+                        input.value = value; // Define o valor formatado de volta ao campo
+                    }
+
+                    // Obtém a referência para o campo de input do CPF
+                    const cpfInput = document.getElementById('cpfInput');
+
+                    // Adiciona um ouvinte de evento para chamar a função de máscara sempre que o valor do campo mudar
+                    cpfInput.addEventListener('input', function () {
+                        maskCPF(this);
+                    });
+                </script>
+                <li>
+                    <label>NOME:</label>
+                    <input type="text" name="txtnome" required>
+                </li>
+                <li>
+                    <label>IDADE:</label>
+                    <input type="text" name="txtidade" pattern="[0-9]+" title="Digite apenas números inteiros" required>
+                </li>
+                <li>
+                    <label>SEXO:</label>
+                    <select name="txtsexo">
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </li>
+                <li>
+                    <label>ENDERECO:</label>
+                    <input type="text" name="txtendereco" required>
+                </li>
+                <li>
+                    <label>DDD + NÚMERO DE TELEFONE:</label>
+                    <input type="text" name="txttelefone" id="telefoneInput" pattern="\(\d{2}\)\d{5}-\d{4}" title="Digite um número de telefone válido" required>
+                </li>
+
+                <script>
+                    // Função para aplicar a máscara no campo de telefone
+                    function maskTelefone(input) {
+                        let value = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+
+                        if (value.length > 2) {
+                            value = value.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1)$2-$3'); // Aplica a máscara (XX)XXXXX-XXXX
+                        }
+
+                        input.value = value; // Define o valor formatado de volta ao campo
+                    }
+
+                    // Obtém a referência para o campo de input do telefone
+                    const telefoneInput = document.getElementById('telefoneInput');
+
+                    // Adiciona um ouvinte de evento para chamar a função de máscara sempre que o valor do campo mudar
+                    telefoneInput.addEventListener('input', function () {
+                        maskTelefone(this);
+                    });
+                </script>
+
+                <li>
+                    <label>EMAIL:</label>
+                    <input type="text" name="txtemail" required>
+                </li>
+                <li>
+                    <label>PROFISSÃO:</label>
+                    <input type="text" name="txtprofissao" required>
+                </li>
+                <li>
+                    <label>RENDA MENSAL:</label>
+                    <input type="text" name="txtrenda" pattern="[0-9]+(\.[0-9]+)?" title="Digite apenas números válidos, Ex:1000.00" required>
+                </li>
+                <li>
+                    <label>ESTADO CIVIL:</label>
+                    <select name="txtestado_civil">
+                        <option value="solteiro">Solteiro</option>
+                        <option value="casado">Casado</option>
+                        <option value="divorciado">Divorciado</option>
+                        <option value="viuvo">Viúvo</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </li>
+                <li>
+                    <label>NIVEL EDUCACIONAL:</label>
+                    <select name="txtnivel_educacional">
+                        <option value="fundamental">Ensino Fundamental</option>
+                        <option value="medio">Ensino Médio</option>
+                        <option value="superior">Ensino Superior</option>
+                        <option value="pos-graduacao">Pós-graduação</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </li>
+            </ul>
+
+            <!-- Botões de ação -->
+            <div class="button-container">
+                <input type="submit" name="op" value="CADASTRAR">
+
+                <a href="http://localhost:8080/Proj_Cliente/idpage.jsp">
+                    <button type="button">ATUALIZAR</button>
+                </a>
+                <a href="http://localhost:8080/Proj_Cliente/idpage.jsp">
+                    <button type="button">DELETAR</button>
+                </a>
+                <a href="http://localhost:8080/Proj_Cliente/idpage.jsp">
+                    <button type="button">CONSULTAR BY ID</button>
+                </a>
+                <a href="http://localhost:8080/Proj_Cliente/idpage.jsp">
+                    <button type="button">CONSULTAR TODOS</button>
+                </a>
+            </div>
+
+        </form>
+    </body>
+</html>
