@@ -11,11 +11,11 @@
 ## Sobre o projeto:
 Olá!
 
-Este projeto foi desenvolvido por mim no meio do ano de 2023 para a matéria de Implementação Orientada a Objetos. 
-
-Feito no NetBeans 8.2 e utilizando Java. 
-
 No meu projeto, implementei operações de CRUD  (Create, Read, Update, Delete) e adotei os padrões de arquitetura MVC (Model-View-Controller) e utilizei um design baseado em DAO (Data Access Object) para gerenciar o acesso a dados. Além disso, implementei estilos e funcionalidades interativas usando CSS e JavaScript.
+
+Desenvolvi este projeto durante o ano de 2023 como parte da disciplina de Implementação Orientada a Objetos.
+
+O projeto foi criado no ambiente NetBeans 8.2 e utiliza a linguagem Java.
 
 <br>
 
